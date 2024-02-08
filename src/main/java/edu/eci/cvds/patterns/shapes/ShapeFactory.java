@@ -1,12 +1,11 @@
 package edu.eci.cvds.patterns.shapes;
+
 import edu.eci.cvds.patterns.shapes.concrete.*;
 
 public class ShapeFactory
 {
-
     public static Shape create(RegularShapeType _type)
     {
-        //shape shapes;
         switch(_type) {
             case Triangle:
                 return new Triangle();
@@ -23,6 +22,5 @@ public class ShapeFactory
             default:
                 return null;
         }
-
     }
 }
