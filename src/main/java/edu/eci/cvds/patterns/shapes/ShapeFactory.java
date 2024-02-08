@@ -1,5 +1,5 @@
 package edu.eci.cvds.patterns.shapes;
-//import edu.eci.cvds.patterns.shapes.concrete;
+//package edu.eci.cvds.patterns.shapes.concrete;
 
 public class ShapeFactory
 {
@@ -7,11 +7,12 @@ public class ShapeFactory
     {
     }
 
-    public void create(RegularShapeType _type)
+    public Shape create(RegularShapeType _type)
     {
-        //shape shapes;
+        Shape shape;
         switch(_type) {
             case Triangle:
+                //Triangle triangle = new Triangle();
                 //shapes = new Triangle();
                 break;
             case Quadrilateral:
@@ -26,6 +27,6 @@ public class ShapeFactory
             default:
                 System.out.println("Opción no válida");
         }
-        //return shapes;
+        return shape;
     }
 }
