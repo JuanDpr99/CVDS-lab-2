@@ -8,11 +8,11 @@
 ## LA HERRAMIENTA MAVEN :hammer:
 Ingresar a la página de la herramienta [Apache Maven](https://maven.apache.org/what-is-maven.html) y entender:
 - Cuál es su mayor utilidad
-    -  Rta:  
+    -  Rta: El objetivo principal de Maven es permitir que un desarrollador comprenda el estado completo de un esfuerzo de desarrollo en el menor tiempo posible.
 - Fases de maven
-    -  Rta:
+    -  Rta: 
 - Ciclo de vida de la construcción
-    -  Rta:
+    -  Rta: La especificación, ejecución y elaboración de informes de las pruebas unitarias forman parte del ciclo normal de compilación con Maven
 - Para qué sirven los plugins
     -  Rta: Los plugins en Maven permiten extender o personalizar el comportamiento del ciclo de vida de construcción al agregar nuevas metas (goals) y configuraciones específicas. Algunos ejemplos de funcionalidades que pueden ser proporcionadas por plugins son:
         -  Compilación de código fuente
@@ -74,6 +74,49 @@ $  mvn exec:java -Dexec.mainClass="edu.eci.cvds.patterns.archetype.App" -Dexec.a
 ![image](https://github.com/JuanDpr99/CVDS-lab-2/assets/77819591/c8c7e780-3aec-48f2-93a5-7fda370095a0)
 
 ![image](https://github.com/JuanDpr99/CVDS-lab-2/assets/77819591/e063db09-baec-46a2-be69-c9b09f7847d2)
+
+## HACER EL ESQUELETO DE LA APLICACIÓN
+
+-    Decidimos implemetar el patrón de fábrica 'Simple Factory', un patrón sumamente sencillo de implementar. Básicamente se trata de crear una clase que contenga un método (o varios), ya sea público o estático (también publico), que contenga un gigante condicional para la creación de cada producto u objeto.
+
+```java
+     public class ShapeFactory
+    {
+        public static Shape create(RegularShapeType _type)
+        {
+            switch(_type) {
+                case Triangle:
+                    return new Triangle();
+    
+                case Quadrilateral:
+                    return new Quadrilateral();
+    
+                case Pentagon:
+                    return new Pentagon();
+    
+                case Hexagon:
+                    return new Hexagon();
+    
+                default:
+                    return null;
+            }
+        }
+    }
+```
+-    Ejecute múltiples veces la clase ShapeMain, usando el plugin exec de maven con los siguientes parámetros y verifique la salida en consola para cada una:
+     -     Sin parámetros
+         -    ![image](https://github.com/JuanDpr99/CVDS-lab-2/assets/77819591/fd7e6351-f418-4b28-9bb2-cf3b20ddb396)
+
+     -     Parámetro: qwerty
+         -    ![image](https://github.com/JuanDpr99/CVDS-lab-2/assets/77819591/8b53f472-2654-48e3-ac14-f77491cee414)
+    
+     -     Parámetro: pentagon
+         -    ![image](https://github.com/JuanDpr99/CVDS-lab-2/assets/77819591/033b7a3c-8e30-4b82-a33c-979d64aa12ba)
+
+     -     Parámetro: Hexagon
+         -    ![image](https://github.com/JuanDpr99/CVDS-lab-2/assets/77819591/b12c5268-2ebc-42d1-b7ae-15b560e5692a)
+
+       
 
 
 
