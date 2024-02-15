@@ -10,7 +10,21 @@ Ingresar a la página de la herramienta [Apache Maven](https://maven.apache.org/
 - Cuál es su mayor utilidad
     -  Rta: El objetivo principal de Maven es permitir que un desarrollador comprenda el estado completo de un esfuerzo de desarrollo en el menor tiempo posible.
 - Fases de maven
-    -  Rta: 
+    -  Rta:
+          - Validate: valida que el proyecto esta correcto y tienen toda la información necesaria par su construcción.
+          - Compile: compila el código fuente del proyecto.
+          - Test: lanza los test de la aplicación. Estos test no necesitan que la aplicación este empaquetada ni desplegada.
+          - Package: toma las clases compiladas y recursos y crea un paquete con el proyecto (jar, war, ear)
+          - Integration-test: procesa y despliega el paquete antes si es necesario para que corran las pruebas de integración.
+          - Verify: realiza algun tipo de chequeo para comprobar si el paquete cumple unas normas de calidad.
+          - Install: instala el paquete en el repositorio local para ser usado como dependencia por otros proyectos localmente.
+          - Deploy: copia el paquete a un reposiotorio remoto para ser compartido con otros usuarios y proyectos.
+
+ 
+    -  Fuente: https://www.juntadeandalucia.es/servicios/madeja/node/737/download/CursoDeIntroduccionMaven.pdf#:~:text=Las%20principales%20fases%20del%20ciclo,los%20test%20de%20la%20aplicaci%C3%B3n.
+             
+
+
 - Ciclo de vida de la construcción
     -  Rta: La especificación, ejecución y elaboración de informes de las pruebas unitarias forman parte del ciclo normal de compilación con Maven
 - Para qué sirven los plugins
